@@ -6,7 +6,7 @@ cols <- list(ALP = "#DE3533",
              IND = "#808080",
              KAP = "#b50204",
              ONP = "#F8F16F",
-             CR = "#000000") %>%
+             CR = "purple") %>%
   unlist
 
 windows(width=20, height=10)
