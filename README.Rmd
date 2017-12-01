@@ -44,7 +44,7 @@ to_plot <- mutate(primary_votes,
 
 Now consider all electorates shown as pie charts, with candidates ordered by share of vote
 
-``` {r, fig.width=7, fig.height=21}
+``` {r, fig.width=7, fig.height=21, dpi=300}
 ggplot(data=to_plot,
        aes(x=0, y=Percent)) + 
   geom_col(aes(fill=Party, group=order), 
