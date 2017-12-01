@@ -28,8 +28,6 @@ for (i in 1:N){
   
 }
 
-electorate_2pp <- 
-
 primary_votes <- bind_rows(electorate_results)
 
 write_csv("Data/primary_votes.csv", x = primary_votes)
