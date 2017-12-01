@@ -15,7 +15,7 @@ for (i in 1:N){
   
   electorate_data[[i]] <- read_html(electorate_url[[i]])
   
-  electorate_data[[i]] <- electorate_data[[i]] %>% html_nodes("title") %>%
+  electorate_name[[i]] <- electorate_data[[i]] %>% html_nodes("title") %>%
     gsub(x=., pattern = "<title>Elections - 2017 State General Election - ", replacement= "") %>%
     gsub(x=., pattern = " - \r\n              District Summary\r\n            </title>\n", replacement="")
   
@@ -28,9 +28,9 @@ for (i in 1:N){
   
 }
 
+electorate_2pp <- 
+
 primary_votes <- bind_rows(electorate_results)
 
-mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
-  ggplot(data=.,aes(x=Electorate, y=Percent)) + 
-  geom_col(aes(fill=Party)) +
-  coord_flip()
+write_csv("Data/primary_votes.csv", x = primary_votes)
+
