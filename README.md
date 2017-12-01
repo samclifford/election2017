@@ -1,7 +1,7 @@
 ECQ Primary Vote data
 ================
 
-If you've run the ECQ scraper script you should have a file called `primary_votes.csv` in your `Data` folder. The scraper script pulls down the results pages from the ECQ website and extracts the results summary table for each electorate. This is all coerced into a tidy data frame with each candidate's party affiliation (`IND` if none given), raw number of formal, primary votes, and the percentage of the vote for that electorate received. A full distribution of preferences is not available yet.
+If you've run the ECQ scraper script you should have a file called `primary_votes.csv` in your `Data` folder. The scraper script pulls down the results pages from the [ECQ website](https://results.ecq.qld.gov.au/elections/state/State2017/results/summary.html) and extracts the results summary table for each electorate. I realise that there's a [downloadable zip file with an XML file](https://results.ecq.qld.gov.au/elections/state/State2017/mediainformation.html) but trying to deal with unzipping an XML and parsing the tree seemed to be too difficult. In any case, the HTML data is is all coerced into a tidy data frame with each candidate's party affiliation (`IND` if none given), raw number of formal, primary votes, and the percentage of the vote for that electorate received. A full distribution of preferences is not available yet.
 
 ``` r
 # source("ecq_scraper.R")
