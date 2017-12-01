@@ -10,11 +10,14 @@ cols <- list(ALP = "#DE3533",
   unlist
 
 windows(width=20, height=10)
-mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
+
+to_plot <- mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
   group_by(Electorate) %>%
   arrange(Percent) %>%
-  mutate(group = 1:n()) %>%
-  ggplot(data=.,aes(x=0, y=Percent)) + 
+  mutate(group = 1:n())
+
+ggplot(data=to.plot,
+       aes(x=0, y=Percent)) + 
   geom_col(aes(fill=Party, group=group), 
            position=position_stack(),
            color="black") +
@@ -26,10 +29,6 @@ mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
   xlab("") + ylab("")
 
 windows()
-to_plot <- mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
-  group_by(Electorate) %>%
-  arrange(Percent) %>%
-  mutate(group = 1:n())
 
 filter(to_plot, Percent > 50) %>%
   select(Electorate) %>%

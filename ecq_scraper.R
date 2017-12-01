@@ -19,7 +19,10 @@ for (i in 1:N){
     gsub(x=., pattern = "<title>Elections - 2017 State General Election - ", replacement= "") %>%
     gsub(x=., pattern = " - \r\n              District Summary\r\n            </title>\n", replacement="")
   
-  electorate_results[[i]] <- (electorate_data[[i]] %>% html_nodes("table.resultTableBorder"))[[2]] %>% html_table(trim = T, fill=T, head=F) %>%
+  electorate_results[[i]] <- 
+    (electorate_data[[i]] %>%
+       html_nodes("table.resultTableBorder"))[[2]] %>% 
+    html_table(trim = T, fill=T, head=F) %>%
     filter(row_number() > 1) %>%
     filter(!is.na(X7)) %>%
     select(Candidate = X1, Party = X2, Votes = X3, Percent = X7) %>%
