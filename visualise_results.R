@@ -11,7 +11,10 @@ cols <- list(ALP = "#DE3533",
 
 windows(width=20, height=10)
 
-to_plot <- mutate(primary_votes, Party = if_else(is.na(Party), "IND", Party)) %>%
+to_plot <- mutate(primary_votes,
+                  Party = if_else(is.na(Party), 
+                                  "IND", 
+                                  Party)) %>%
   group_by(Electorate) %>%
   arrange(Percent) %>%
   mutate(group = 1:n()) %>%
@@ -26,7 +29,9 @@ ggplot(data=to_plot,
   coord_polar(theta = "y") +
   facet_wrap( ~ Electorate, ncol=16) +
   theme_minimal() + 
-  theme(legend.position="right", axis.text = element_blank(), strip.text = element_text(size=7)) +
+  theme(legend.position="right", 
+        axis.text = element_blank(), 
+        strip.text = element_text(size=7)) +
   scale_fill_manual(values = cols) +
   xlab("") + ylab("")
 
@@ -40,7 +45,9 @@ filter(to_plot, Percent > 50) %>%
   coord_polar(theta = "y") +
   facet_wrap( ~ Electorate) +
   theme_minimal() + 
-  theme(legend.position="right", axis.text = element_blank(), strip.text = element_text(size=7)) +
+  theme(legend.position="right", 
+        axis.text = element_blank(),
+        strip.text = element_text(size=7)) +
   scale_fill_manual(values = cols) +
   xlab("") + ylab("") + 
   ggtitle(label = "Queensland State Election 2017", 

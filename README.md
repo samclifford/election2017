@@ -23,14 +23,13 @@ head(primary_votes)
 We need to choose some colours for each party running. These are taken from the [Wikipedia template](https://en.wikipedia.org/wiki/Category:Australia_political_party_colour_templates) except for `CR`, the Consumer Rights & No-Tolls party.
 
 ``` r
-cols <- unlist(list(
-  ALP = "#DE3533",
-  GRN = "#39b54a",
-  LNP = "#1456F1",
-  IND = "#808080",
-  KAP = "#b50204",
-  ONP = "#F8F16F",
-  CR = "#000000"))
+cols <- unlist(list(ALP = "#DE3533",
+                    GRN = "#39b54a",
+                    LNP = "#1456F1",
+                    IND = "#808080",
+                    KAP = "#b50204",
+                    ONP = "#F8F16F",
+                    CR = "purple"))
 ```
 
 We also need to process the data to show who is independent, and to order the candidates from largest to smallest vote (with 1 being the largest vote)
@@ -58,7 +57,8 @@ ggplot(data=to_plot,
   facet_wrap( ~ Electorate, nrow=16) +
   theme_minimal() + 
   theme(legend.position="top", axis.text = element_blank(), 
-        strip.text = element_text(size=7)) +
+        strip.text = element_text(size=7),
+        panel.grid = element_blank()) +
   scale_fill_manual(values = cols) +
   xlab("") + ylab("") +
   ggtitle(label = "Primary vote for each candidate in each electorate",
