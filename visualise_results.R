@@ -11,12 +11,14 @@ cols <- list(ALP = "#DE3533",
 
 windows(width=20, height=10)
 
-to_plot <- mutate(primary_votes, Party = if_else(Party == "", "IND", Party)) %>%
+to_plot <- mutate(primary_votes, Party = if_else(is.na(Party), "IND", Party)) %>%
   group_by(Electorate) %>%
   arrange(Percent) %>%
-  mutate(group = 1:n())
+  mutate(group = 1:n()) %>%
+  ungroup %>%
+  arrange(Electorate, Party)
 
-ggplot(data=to.plot,
+ggplot(data=to_plot,
        aes(x=0, y=Percent)) + 
   geom_col(aes(fill=Party, group=group), 
            position=position_stack(),

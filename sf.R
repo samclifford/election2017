@@ -70,17 +70,17 @@ for (i in 1:6){
   plot(new_cells[[2]], main = paste("Seed",i, sep=" "))
 }
 
-new_cells_hex <-  calculate_cell_size(original_shapes, original_details,0.03, 'hexagonal', 2)
-resulthex <- assign_polygons(original_shapes,new_cells_hex)
+new_cells_to_plot <-  calculate_cell_size(original_shapes, original_details,0.03, "regular", 2)
+result_to_plot <- assign_polygons(original_shapes, new_cells_to_plot)
 
-result_df_hex <- clean(resulthex)
+result_df_to_plot <- clean(result_to_plot)
 
 wide_results %>%
   gather(Party, Percent, -Electorate) %>%
   mutate(Percent = if_else(is.na(Percent), 0, Percent)) %>%
-  mutate(Percent = cut(Percent, breaks=c(0,1, 10, 20, 30, 40, 50, 60, 70), right = F)) %>%
+  mutate(Percent = cut(Percent, breaks=c(0,1, 10, 20, 30, 40, 50, 100), right = F)) %>%
   inner_join(electorate_names) %>%
-  inner_join(result_df_hex) %>%
+  inner_join(result_df_to_plot) %>%
   ggplot(.) +
   geom_polygon( aes(x=long, y=lat, alpha = Percent, fill=Party, group = group)) +
   geom_text(aes(V1, V2, label = abbreviate(Electorate, minlength = 4)), size=2,color = "black") +
@@ -89,3 +89,8 @@ wide_results %>%
   guides(fill=FALSE) +
   scale_fill_manual(values=cols) +
   theme_void()
+
+
+
+
+adj <- spdep::poly2nb(qld)
