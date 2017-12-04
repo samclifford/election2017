@@ -30,8 +30,6 @@ ggplot(data=to_plot,
   scale_fill_manual(values = cols) +
   xlab("") + ylab("")
 
-windows()
-
 filter(to_plot, Percent > 50) %>%
   select(Electorate) %>%
   inner_join(to_plot) %>%
@@ -44,4 +42,44 @@ filter(to_plot, Percent > 50) %>%
   theme_minimal() + 
   theme(legend.position="right", axis.text = element_blank(), strip.text = element_text(size=7)) +
   scale_fill_manual(values = cols) +
-  xlab("") + ylab("")
+  xlab("") + ylab("") + 
+  ggtitle(label = "Queensland State Election 2017", 
+          subtitle = "Winners on primary vote")
+
+ABC_2CP <- read_csv("Data/2CP_votes.csv")
+
+to_plot_2CP <- list(Primary = to_plot,
+                    `2CP` = ABC_2CP) %>%
+  bind_rows(.id = "Type")
+
+# an example of any three-cornered contests
+three_cornered <- filter(to_plot, Percent > 25) %>%
+  count(Electorate) %>%
+  filter(n >= 3) %>%
+  select(Electorate)
+
+
+
+to_plot_2CP %>%
+  ggplot(data = .,
+         aes(x = Type, y = Percent)) +
+  geom_col(aes(fill = Party, group = group),
+           position = position_stack(), 
+           width = 1,
+           color = "black") +
+  coord_polar(theta = "y") +
+  facet_wrap( ~ Electorate, ncol = 16) +
+  theme_minimal() +
+  theme(
+    legend.position = "right",
+    axis.text.x = element_blank(),
+    strip.text = element_text(size = 7)
+  ) +
+  scale_fill_manual(values = cols) +
+  xlab("") + ylab("") +
+  geom_text(
+    data = filter(to_plot_2CP, Type == "2CP", group == 2),
+    aes(x = Type, y = Percent / 2, label = Percent),
+    size = 2,
+    color = "white"
+  )

@@ -1,0 +1,71 @@
+Electorate,Party_ABC,Candidate,Votes,Percent,Swing,Party,group
+Algester,LNP,Clinton Pattison,9876,35.7,-4.7,LNP,1
+Algester,Labor,Leeanne Enoch,17820,64.3,4.7,ALP,2
+Aspley,LNP,Tracy Davis,15633,48.8,-4.3,LNP,1
+Aspley,Labor,Bart Mellish,16376,51.2,4.3,ALP,2
+Bancroft,LNP,Kara Thomas,12144,44,2.4,LNP,1
+Bancroft,Labor,Chris Whiting,15425,56,-2.4,ALP,2
+Barron River,LNP,Michael Trout,13109,47.4,1,LNP,1
+Barron River,Labor,Craig Crawford,14530,52.6,-1,ALP,2
+Bonney,Labor,Rowan Holzberger,12456,48.6,0.7,ALP,1
+Bonney,LNP,Sam O'Connor,13172,51.4,-0.7,LNP,2
+Broadwater,Labor,Peter Flori,8202,31.3,-2.4,ALP,1
+Broadwater,LNP,David Crisafulli,18041,68.7,2.4,LNP,2
+Buderim,One Nation,Steve Dickson,10437,36.7,-1.5,ONP,1
+Buderim,LNP,Brent Mickelberg,17982,63.3,1.5,LNP,2
+Bulimba,LNP,Fiona Ward,12560,39.7,-4.1,LNP,1
+Bulimba,Labor,Di Farmer,19069,60.3,4.1,ALP,2
+Bundaberg,Labor,Leanne Donaldson,13563,45.8,-4.7,ALP,1
+Bundaberg,LNP,David Batt,16051,54.2,4.7,LNP,2
+Bundamba,LNP,Patrick Herbert,7142,28,3.9,LNP,1
+Bundamba,Labor,Jo-Ann Miller,18379,72,-3.9,ALP,2
+Burdekin,Labor,Michael Brunker,13974,49.4,-2,ALP,1
+Burdekin,LNP,Dale Last,14338,50.6,2,LNP,2
+Burleigh,Labor,Gail Hislop,12138,44.7,0.1,ALP,1
+Burleigh,LNP,Michael Hart,15035,55.3,-0.1,LNP,2
+Burnett,Labor,Lee Harvey,11219,39,-4.4,ALP,1
+Burnett,LNP,Stephen Bennett,17526,61,4.4,LNP,2
+Cairns,LNP,Sam Marino,12753,46.5,4,LNP,1
+Cairns,Labor,Michael Healy,14669,53.5,-4,ALP,2
+Callide,One Nation,Sharon Lohse,11848,45.8,5.6,ONP,1
+Callide,LNP,Colin Boyce,14023,54.2,-5.6,LNP,2
+Caloundra,Labor,Jason Hunt,13369,46.3,1,ALP,1
+Caloundra,LNP,Mark McArdle,15488,53.7,-1,LNP,2
+Capalaba,LNP,Cameron Leafe,12081,42.7,-0.8,LNP,1
+Capalaba,Labor,Don Brown,16237,57.3,0.8,ALP,2
+Chatsworth,Labor,Paul Keene,13758,47.1,0.4,ALP,1
+Chatsworth,LNP,Steve Minnikin,15466,52.9,-0.4,LNP,2
+Clayfield,Labor,Philip Anthony,13822,47.2,3.8,ALP,1
+Clayfield,LNP,Tim Nicholls,15470,52.8,-3.8,LNP,2
+Condamine,One Nation,Frank Ashman,13110,40.6,7.8,ONP,1
+Condamine,LNP,Pat Weir,19146,59.4,-7.8,LNP,2
+Cook,One Nation,Jen Sackley,11375,45.8,2.6,ONP,1
+Cook,Labor,Cynthia Lui,13438,54.2,-2.6,ALP,2
+Coomera,Labor,Christopher Johnson,13461,46.9,2.7,ALP,1
+Coomera,LNP,Michael Crandon,15269,53.1,-2.7,LNP,2
+Cooper,LNP,Robert Shearman,12674,39.4,-7.3,LNP,1
+Cooper,Labor,Kate Jones,19524,60.6,7.3,ALP,2
+Currumbin,Labor,Georgi Leader,12902,46.8,2.5,ALP,1
+Currumbin,LNP,Jann Stuckey,14663,53.2,-2.5,LNP,2
+Everton,Labor,David Greene,14421,45,-2.9,ALP,1
+Everton,LNP,Tim Mander,17600,55,2.9,LNP,2
+Ferny Grove,LNP,Nick Elston,12869,45.3,0.6,LNP,1
+Ferny Grove,Labor,Mark Furner,15541,54.7,-0.6,ALP,2
+Gaven,LNP,Sid Cramp,12949,49.1,-3.6,LNP,1
+Gaven,Labor,Meaghan Scanlon,13413,50.9,3.6,ALP,2
+Gladstone,One Nation,Amy Lohse,7342,28.9,-8.1,ONP,1
+Gladstone,Labor,Glenn Butcher,18089,71.1,8.1,ALP,2
+Glass House,Labor,Brent Hampstead,13432,47.3,-1.8,ALP,1
+Glass House,LNP,Andrew Powell,14968,52.7,1.8,LNP,2
+Maiwar,LNP,Scott Emerson,14471,47.7,-5.3,LNP,1
+Maiwar,Greens,Michael Berkman,15889,52.3,5.3,GRN,2
+Noosa,LNP,Glen Elmes,10921,38.3,-18.5,LNP,1
+Noosa,Independent,Sandy ,17574,61.7,18.5,IND,2
+Nudgee,LNP,Debbie Glaze,10336,35.1,-5.7,LNP,1
+Nudgee,Labor,Leanne Linard,19122,64.9,5.7,ALP,2
+Oodgeroo,Labor,Tony Austin,11878,42.9,-1.4,ALP,1
+Oodgeroo,LNP,Mark Robinson,15817,57.1,1.4,LNP,2
+Pine Rivers,LNP,Chris Thompson,14356,44.2,-1.6,LNP,1
+Pine Rivers,Labor,Nikki Boyd,18106,55.8,1.6,ALP,2
+South Brisbane,Greens,Amy MacMahon,12498,45.3,9.1,GRN,1
+South Brisbane,Labor,Jackie Trad,15100,54.7,-9.1,ALP,2

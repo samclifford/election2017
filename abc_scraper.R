@@ -1,3 +1,6 @@
+# devtools::install_github('milesmcbain/datapasta')
+library(datapasta)
+
 convert_abc <- function(x) {
   matrix(x, ncol = 5, byrow = T) %>%
     data.frame %>%
@@ -473,9 +476,6 @@ ABC_2CP <- list(
 ) %>%
   map_df(~ convert_abc(.x), .id = "Electorate")
 
-
-## get to_plot from visualise_results.R
-
 library(purrr)
 party_key <- list(LNP = "LNP",
                   Labor = "ALP",
@@ -492,37 +492,4 @@ ABC_2CP <- inner_join(ABC_2CP, party_key) %>%
   arrange(Electorate, Percent) %>%
   mutate(group = 1:n())
 
-to_plot_2CP <- list(Primary = to_plot,
-                    `2CP` = ABC_2CP) %>%
-  bind_rows(.id = "Type")
-
-three_cornered <- filter(to_plot, Percent > 25) %>%
-  count(Electorate) %>%
-  filter(n >= 3) %>%
-  select(Electorate)
-
-to_plot_2CP %>%
-  #inner_join(three_cornered) %>%
-  ggplot(data = .,
-       aes(x = Type, y = Percent)) +
-  geom_col(aes(fill = Party, group = group),
-           position = position_stack(), 
-           width = 1,
-           color = "black") +
-  coord_polar(theta = "y") +
-  facet_wrap( ~ Electorate, ncol = 16) +
-  theme_minimal() +
-  theme(
-    legend.position = "right",
-    axis.text.x = element_blank(),
-    strip.text = element_text(size = 7)
-  ) +
-  scale_fill_manual(values = cols) +
-  xlab("") + ylab("") +
-  geom_text(
-    data = filter(to_plot_2CP, Type == "2CP", group == 2),
-    aes(x = Type, y = Percent / 2, label = Percent),
-    size = 2,
-    color = "white"
-  )
-
+write_csv(ABC_2CP, "Data/2CP_votes.csv")
